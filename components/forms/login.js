@@ -1,22 +1,15 @@
 import React, {useState} from 'react';
-import {View} from 'react-native';
 import {Colors} from './../../constants/colors';
+import CustomTextInput from './CustomTextInput.js';
 
 //formik
 import {Formik} from 'formik';
 
-//icons
-import {Octicons, Ionicons, Fontisto} from '@expo/vector-icons';
-
 import {
     FormArea,
-    LeftIcon,
-    CustomInputLabel,
-    StyledTextInput,
-    RightIcon,
     FormSubmitButton,
     ButtonText
-} from './../styles/forms/login.js';
+} from './../styles/forms/common.js';
 
 const LoginForm = () => {
     return (
@@ -75,31 +68,6 @@ function getForm(handleChange, handleBlur, handleSubmit, values) {
 
 function submitForm(values) {
     console.log(values);
-}
-
-const CustomTextInput = ({label, icon, isPassword, hidePassword, setHidePassword, ...props}) => {
-    return (
-        <View>
-            <LeftIcon>
-                <Octicons name={icon} size={30} color={Colors.darkPurple} />
-            </LeftIcon>
-            <CustomInputLabel>{label}</CustomInputLabel>
-            <StyledTextInput {...props} />
-            { isPassword && getPasswordEyeIcon(setHidePassword, hidePassword)}
-        </View>
-    )
-}
-
-function getPasswordEyeIcon(setHidePassword, hidePassword) {
-    return (
-        <RightIcon onPress={() => setHidePassword(!hidePassword)}>
-            <Ionicons
-                name={hidePassword ? 'md-eye-off' : 'md-eye'}
-                size={30}
-                color={Colors.grey}
-            />
-        </RightIcon>
-    );
 }
 
 export default LoginForm;

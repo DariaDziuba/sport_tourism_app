@@ -1,4 +1,5 @@
 import React from 'react';
+import { Colors } from '../constants/colors';
 
 //icons
 import {
@@ -7,11 +8,6 @@ import {
     StyledButtonText,
     BottomContainer
 } from '../components/styles/screens/start'
-
-const Constants = {
-    login: 'login',
-    register: 'register'
-}
 
 function Start({navigation}) {
     return (
@@ -22,9 +18,9 @@ function Start({navigation}) {
                         Login
                     </StyledButtonText>
                 </StyledButton>
-                <StyledButton>
+                <StyledButton color={Colors.violet} onPress={() => navigation.navigate('Signup')}>
                     <StyledButtonText>
-                        Sign in
+                        Sign up
                     </StyledButtonText>
                 </StyledButton>
             </BottomContainer>

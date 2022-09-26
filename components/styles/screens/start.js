@@ -26,9 +26,14 @@ export const StyledButton = styled.TouchableOpacity`
     margin: 10px;
     height: 60px;
     opacity: 1;
+    ${(props) => props.color && `
+        background-color: ${props.color};
+    `};
 `;
 
 export const StyledButtonText = styled.Text`
     text-align: center;
-    color: ${Colors.white}
+    color: ${Colors.white};
+    font-weight: bold;
+    font-size: 17px;
 `;
